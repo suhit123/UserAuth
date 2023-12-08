@@ -23,7 +23,7 @@ exports.loginuser=async(req,res)=>{
     }
     let token;
     try{
-       token=jwt.sign({id:user.id},"secretKey",{expiresIn:"24h"});
+       token=jwt.sign({id:user.id},"shhhsecret",{expiresIn:"24h"});
     }
     catch(err){
         return res.status(401).json({error:"something went wrong!"});

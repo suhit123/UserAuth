@@ -5,8 +5,8 @@ exports.authorize=async(req,res)=>{
     try{
         const token=req.body.token;
     if(token){
-        const decode=await jwt.verify(token,"secretKey");
-        const userdata=await userschema.findOne({username:decode.username});
+        const decode=await jwt.verify(token,"shhhsecret");
+        const userdata=await userschema.findOne({_id:decode.id});
         res.status(200).json({id:userdata._id,Name:userdata.Name,Email:userdata.Email});
     }
     else{
