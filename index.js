@@ -10,10 +10,12 @@ const createroute=require('./routes/create');
 const loginroute=require('./routes/login');
 const userdataroute=require('./routes/userdata');
 const forgotpassword=require('./routes/forgotpassword');
+const post=require('./routes/post');
 app.use('/',createroute.route);
 app.use('/',loginroute.route);
 app.use('/',userdataroute.route);
 app.use('/',forgotpassword.route);
+app.use('/post/',post.route);
 app.get('/',(req,res)=>{
     res.status(200).send({"status":"success"})
 })
