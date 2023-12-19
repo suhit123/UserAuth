@@ -19,6 +19,6 @@ app.use('/post/',post.route);
 app.get('/',(req,res)=>{
     res.status(200).send({"status":"success"})
 })
-app.listen(4000,()=>{
+app.listen(8080,()=>{
     console.log("Listening to port 4000")
 })

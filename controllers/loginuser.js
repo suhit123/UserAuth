@@ -5,6 +5,7 @@ exports.loginuser=async(req,res)=>{
     let user;
     try{
     if(req.body.Name!=='' &&req.body.Password!==''  ){
+        console.log(req.body)
         user= await userschema.findOne({Name:req.body.Name})
         const match=await bcrypt.compare(req.body.Password,user.Password);
         if(!user){
